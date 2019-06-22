@@ -1,0 +1,23 @@
+{
+  "name": "disasm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "disasm-ts": "./bin/disasm.js"
+  },
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.0.0"
+  }
+}
