@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "pretest:local": "npm run build",
+    "test:local": "npm link"
   },
   "keywords": [],
   "author": "",
@@ -14,10 +18,17 @@
     "disasm-ts": "./bin/disasm.js"
   },
   "dependencies": {
+    "@types/chalk": "^2.2.0",
+    "chalk": "^2.4.2",
     "command-line-args": "^5.1.1",
+    "rimraf": "^2.6.3",
     "typescript": "^3.5.2"
   },
   "devDependencies": {
-    "@types/command-line-args": "^5.0.0"
+    "@types/command-line-args": "^5.0.0",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2"
   }
 }
