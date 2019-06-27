@@ -1,6 +1,7 @@
 import chalk from "chalk"
 
 import { parseArgs } from "./args";
+import { opCodeMap } from "./opcodes";
 
 const log = console.log;
 
@@ -23,8 +24,17 @@ export const run = async () => {
     // anyways
     // I also need a dictionary
     const options = parseArgs();
-    log(chalk.red('EVM Disassembler'))
+    log(chalk.green('EVM Disassembler'))
     // log("Bytecode", options.bytecode);
     const bytecodeInBytes = options.bytecode.match(/(..?)/g);
-    log("Bytecode in bytes", bytecodeInBytes)
+    // log("Bytecode in bytes", bytecodeInBytes)
+    if (!bytecodeInBytes) { // TODO: Improve this abstraction
+        throw new Error("Invalid bytecode")
+    }
+    bytecodeInBytes.forEach(element => {
+        const result = opCodeMap.get(element);
+        console.log(`0001  -  0x${element}  -  ${result.mnemonic}`)
+    });
 };
+
+// PC Counter - Mnemonic - Argument

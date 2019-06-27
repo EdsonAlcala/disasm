@@ -23,7 +23,7 @@ export class OpCodeMap {
     }
 
     get(opCode: string): OpCodeDefinition {
-        // TODO: if opCode doesn't have 0x, I should add it
+        // TODO: if opCode doesn't have 0x, I should add it? or just trim it?
         const result = this.opCodeMap.get(`0x${opCode}`);
         if (!result) {
             throw new Error(`OpCode doesn't exist ${opCode}`)
@@ -31,5 +31,3 @@ export class OpCodeMap {
         return result;
     }
 }
-
-export const opCodeMap = new OpCodeMap();
