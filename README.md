@@ -1,15 +1,16 @@
-# Typescript Bytecode Disassembler
+# Warning: This is still a WIP 
 
-> npm install --save chalk figlet inquirer shelljs
+Typescript Bytecode Disassembler
 
+## Install
 
-TODO: what is that exits process?
+> npm install -g disasm
 
-# Usage
+## Usage
 
 disasm-ts 60606040523415600e57600080fd5b603580601b6000396000f300606060
 
-References
+## References
 
 https://github.com/chalk/chalk
 
